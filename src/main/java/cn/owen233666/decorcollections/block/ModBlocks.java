@@ -3,7 +3,6 @@ package cn.owen233666.decorcollections.block;
 import cn.owen233666.decorcollections.DecorCollections;
 import cn.owen233666.decorcollections.block.custom.SlimeBottleBlock;
 import cn.owen233666.decorcollections.items.ModItems;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -28,7 +27,7 @@ public class ModBlocks {
     }
 
     private static <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block) {
-        ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+        ModItems.ITEMS.register(name, () -> new SlimeBottleBlockItem(block.get(), new Item.Properties()));
     }
 
     public static void register(IEventBus eventBus) {
