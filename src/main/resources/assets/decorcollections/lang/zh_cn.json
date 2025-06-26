@@ -1,5 +1,6 @@
 {
   "itemGroup.decorcollections": "Decor Collections",
   "block.decorcollections.slime_bottle": "史莱姆瓶",
-  "creativetab.decorcollections.all": "Decor Collections"
+  "creativetab.decorcollections.all": "Decor Collections",
+  "message.decorcollections.slime_too_big": "史莱姆太大了，换一只小点的试试吧~"
 }

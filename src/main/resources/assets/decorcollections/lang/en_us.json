@@ -1,5 +1,6 @@
 {
   "itemGroup.decorcollections": "Decor Collections",
   "block.decorcollections.slime_bottle": "Slime Bottle",
-  "creativetab.decorcollections.all": "Decor Collections"
+  "creativetab.decorcollections.all": "Decor Collections",
+  "message.decorcollections.slime_too_big": "The Slime is too big, try a smaller one instead"
 }
