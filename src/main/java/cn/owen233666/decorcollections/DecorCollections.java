@@ -2,6 +2,7 @@ package cn.owen233666.decorcollections;
 
 import cn.owen233666.decorcollections.block.ModBlocks;
 import cn.owen233666.decorcollections.block.entity.ModBlockEntities;
+import cn.owen233666.decorcollections.event.SlimeBottleConversionEvent;
 import cn.owen233666.decorcollections.items.ModCreativeTab;
 import cn.owen233666.decorcollections.items.ModItems;
 import com.mojang.logging.LogUtils;
@@ -37,6 +38,7 @@ public class DecorCollections {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
         NeoForge.EVENT_BUS.register(this);
+        NeoForge.EVENT_BUS.register(SlimeBottleConversionEvent.class);
 
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
