@@ -16,7 +16,7 @@ public class ModCreativeTab {
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, DecorCollections.MOD_ID);
 
     public static final Supplier<CreativeModeTab> DECOR_COLLECTIONS_TAB = CREATIVE_MODE_TAB.register("decor_collections_tab",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.BISMUTH.get()))
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.SLIMEBOTTLE.get()))
                     .title(Component.translatable("creativetab.decorcollections.all"))
                     .displayItems(((itemDisplayParameters, output) -> {
                         output.accept(ModBlocks.SLIMEBOTTLE.get());
