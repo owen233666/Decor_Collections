@@ -7,6 +7,7 @@
 		"7": "decorcollections:block/05m_bottle_1",
 		"particle": "decorcollections:block/005cafe_0_particle"
 	},
+	"render_type": "translucent",
 	"elements": [
 		{
 			"from": [4.1, 4.9, 4.25],
