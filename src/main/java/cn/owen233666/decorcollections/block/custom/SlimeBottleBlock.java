@@ -3,6 +3,7 @@ package cn.owen233666.decorcollections.block.custom;
 import cn.owen233666.decorcollections.block.entity.SlimeBottleBlockEntity;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseEntityBlock;
@@ -20,7 +21,7 @@ public class SlimeBottleBlock extends BaseEntityBlock {
     public static final MapCodec<SlimeBottleBlock> CODEC = simpleCodec(SlimeBottleBlock::new);
 
     public SlimeBottleBlock(Properties properties) {
-        super(properties.noOcclusion());
+        super(properties.noOcclusion().lightLevel(state -> 7));
     }
 
     protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
@@ -51,5 +52,17 @@ public class SlimeBottleBlock extends BaseEntityBlock {
             }
         }
         super.onRemove(state, level, pos, newState, movedByPiston);
+    }
+
+    // 关键方法：控制相邻方块面的渲染
+    @Override
+    public boolean skipRendering(BlockState state, BlockState adjacentState, Direction direction) {
+        return adjacentState.is(this) || super.skipRendering(state, adjacentState, direction);
+    }
+
+    // 关键方法：设置光照级别（类似玻璃，允许光线穿过）
+    @Override
+    public float getShadeBrightness(BlockState state, BlockGetter level, BlockPos pos) {
+        return 0.98F; // 接近玻璃的值
     }
 }
