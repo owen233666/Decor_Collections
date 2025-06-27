@@ -1,9 +1,13 @@
 package cn.owen233666.decorcollections.event;
 
 import cn.owen233666.decorcollections.block.ModBlocks;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageSources;
+import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.monster.Slime;
@@ -36,6 +40,7 @@ public class SlimeBottleConversionEvent {
                 event.getTarget().getType() == EntityType.SLIME) {
             Slime slime = (Slime) event.getTarget();
             if (slime.getSize() == 1) {
+                DamageSource damageSource = new DamageSources(player.registryAccess()).playerAttack(player);
                 if (random.nextInt(4) == 0) {
                     offHandItem.shrink(1);
                     mainHandItem.shrink(1);

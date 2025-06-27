@@ -1,6 +1,7 @@
 package cn.owen233666.decorcollections.block;
 
 import cn.owen233666.decorcollections.DecorCollections;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -16,6 +17,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -23,7 +25,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.living.LivingEquipmentChangeEvent;
 
-import java.util.UUID;
+import java.util.List;
 
 
 public class SlimeBottleBlockItem extends BlockItem {
@@ -137,6 +139,12 @@ public class SlimeBottleBlockItem extends BlockItem {
             );
             return InteractionResultHolder.sidedSuccess(heldItem, level.isClientSide);
         }
+    }
+
+    @Override
+    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+        tooltipComponents.add(Component.translatable("tooltip.decorcollections.slime_bottle"));
+        super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
     }
 
     @EventBusSubscriber(modid = DecorCollections.MOD_ID, bus = EventBusSubscriber.Bus.GAME)

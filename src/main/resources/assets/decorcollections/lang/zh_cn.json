@@ -1,6 +1,7 @@
 {
   "itemGroup.decorcollections": "Decor Collections",
-  "block.decorcollections.slime_bottle": "史莱姆瓶",
+  "block.decorcollections.slime_bottle": "§a史莱姆瓶",
+  "tooltip.decorcollections.slime_bottle": "§a为它的主人提供额外§r§c四点生命值§r§a和§r两点盔甲值§r",
   "creativetab.decorcollections.all": "Decor Collections",
   "message.decorcollections.slime_too_big": "史莱姆太大了，换一只小点的试试吧~"
 }

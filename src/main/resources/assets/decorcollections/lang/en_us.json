@@ -1,6 +1,7 @@
 {
   "itemGroup.decorcollections": "Decor Collections",
-  "block.decorcollections.slime_bottle": "Slime Bottle",
+  "block.decorcollections.slime_bottle": "§aSlime Bottle",
+  "tooltip.decorcollections.slime_bottle": "§aProvides§r §c4 health bonus§r §aand§r 2 armor §rfor its master",
   "creativetab.decorcollections.all": "Decor Collections",
   "message.decorcollections.slime_too_big": "The Slime is too big, try a smaller one instead"
 }
